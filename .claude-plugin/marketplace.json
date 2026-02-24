@@ -1,0 +1,19 @@
+{
+  "name": "takashicompany",
+  "owner": {
+    "name": "takashicompany"
+  },
+  "metadata": {
+    "description": "takashicompany's Claude Code plugins"
+  },
+  "plugins": [
+    {
+      "name": "yesman",
+      "source": {
+        "source": "github",
+        "repo": "takashicompany/yesman"
+      },
+      "description": "Claude Codeの承諾プロンプトを条件に応じて自動承認するHookプラグイン"
+    }
+  ]
+}
