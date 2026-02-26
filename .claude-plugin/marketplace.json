@@ -14,6 +14,14 @@
         "repo": "takashicompany/yesman"
       },
       "description": "Claude Codeの承諾プロンプトを条件に応じて自動承認するHookプラグイン"
+    },
+    {
+      "name": "tush-push",
+      "source": {
+        "source": "github",
+        "repo": "takashicompany/tush-push"
+      },
+      "description": "Claude Codeの応答完了時・承認待ち時にPushover経由でプッシュ通知を送る"
     }
   ]
 }
