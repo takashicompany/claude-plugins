@@ -26,7 +26,7 @@
     {
       "name": "wakariyasui-game",
       "description": "ゲームのスクリーンショットや動画からAIがゲーム内容を理解できるかを評価し、分かりやすさを採点するプラグイン",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "takashicompany"
       },
