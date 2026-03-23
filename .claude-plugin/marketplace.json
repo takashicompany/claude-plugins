@@ -22,6 +22,17 @@
         "repo": "takashicompany/tush-push"
       },
       "description": "Claude Codeの応答完了時・承認待ち時にPushover経由でプッシュ通知を送る"
+    },
+    {
+      "name": "hello-skill",
+      "description": "挨拶するだけのダミースキルプラグイン（動作確認用）",
+      "version": "0.1.0",
+      "author": {
+        "name": "takashicompany",
+        "email": "mail@this.is.dummy"
+      },
+      "source": "./plugins/hello-skill",
+      "category": "development"
     }
   ]
 }
