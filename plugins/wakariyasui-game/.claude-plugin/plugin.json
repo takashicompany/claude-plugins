@@ -1,0 +1,7 @@
+{
+  "name": "wakariyasui-game",
+  "description": "ゲームのスクリーンショットや動画からAIがゲーム内容を理解できるかを評価し、分かりやすさを採点するプラグイン",
+  "author": {
+    "name": "takashicompany"
+  }
+}

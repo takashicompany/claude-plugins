@@ -22,6 +22,16 @@
         "repo": "takashicompany/tush-push"
       },
       "description": "Claude Codeの応答完了時・承認待ち時にPushover経由でプッシュ通知を送る"
+    },
+    {
+      "name": "wakariyasui-game",
+      "description": "ゲームのスクリーンショットや動画からAIがゲーム内容を理解できるかを評価し、分かりやすさを採点するプラグイン",
+      "version": "0.1.0",
+      "author": {
+        "name": "takashicompany"
+      },
+      "source": "./plugins/wakariyasui-game",
+      "category": "testing"
     }
   ]
 }
