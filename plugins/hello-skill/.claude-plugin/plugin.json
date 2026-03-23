@@ -1,8 +1,0 @@
-{
-  "name": "hello-skill",
-  "description": "挨拶するだけのダミースキルプラグイン（動作確認用）",
-  "author": {
-    "name": "takashicompany",
-    "email": "mail@this.is.dummy"
-  }
-}
