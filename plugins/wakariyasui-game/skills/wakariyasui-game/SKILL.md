@@ -8,10 +8,9 @@ allowed-tools: Agent, Read, Glob, Bash(mkdir:*), Write
 ## 事前準備: 出力フォルダの作成
 
 実行環境のカレントディレクトリに以下の構造で出力フォルダを作成してください。
-`YYYYMMDD-HHmmss` は実行開始時のタイムスタンプです。
 
 ```
-wakariyasui-game-results/<ゲーム名>-<YYYYMMDD-HHmmss>/
+wakariyasui-game-results/<ゲーム名>/
 ├── materials/          # 収集した素材（スクリーンショットや動画）
 ├── tester-report.md    # テスターの説明
 ├── scorer-report.md    # 採点結果
