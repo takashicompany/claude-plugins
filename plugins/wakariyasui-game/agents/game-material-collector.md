@@ -1,7 +1,7 @@
 ---
 name: game-material-collector
 description: ゲームの評価に使用するスクリーンショットや動画などの素材を収集・用意するエージェント。素材が既にある場合は収集し、ない場合はMCP経由でゲームをプレイしてスクリーンショットを撮影する。
-tools: Read, Glob, Grep
+tools: Read, Glob, Grep, mcp__playwright__*, mcp__playcaller__*
 ---
 
 あなたはゲーム評価のための素材収集エージェントです。
