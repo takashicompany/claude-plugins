@@ -1,6 +1,4 @@
-# takashicompany Claude Code Plugins
-
-takashicompany が提供する Claude Code プラグインのマーケットプレイスです。
+# Claude Code Plugins
 
 ## インストール
 
@@ -9,7 +7,7 @@ takashicompany が提供する Claude Code プラグインのマーケットプ�
 /plugin marketplace add takashicompany/claude-plugins
 
 # プラグイン一覧から選んでインストール
-/plugin install yesman@takashicompany
+/plugin
 ```
 
 ## プラグイン一覧
