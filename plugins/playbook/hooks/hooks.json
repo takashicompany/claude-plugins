@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/inject-rules.sh",
+            "timeout": 5,
+            "statusMessage": "ルールを読み込み中..."
+          }
+        ]
+      }
+    ]
+  }
+}

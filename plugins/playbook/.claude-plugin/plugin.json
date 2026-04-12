@@ -1,0 +1,8 @@
+{
+  "name": "playbook",
+  "description": "プロンプト送信時にルールファイルを自動で注入するHookプラグイン",
+  "author": {
+    "name": "takashicompany"
+  },
+  "keywords": ["hooks", "rules", "prompt-injection", "grounding"]
+}
