@@ -1,0 +1,8 @@
+{
+  "name": "booth-review",
+  "description": "回答完了時に根拠チェックを強制するHookプラグイン",
+  "author": {
+    "name": "takashicompany"
+  },
+  "keywords": ["hooks", "grounding", "fact-check", "hallucination"]
+}
