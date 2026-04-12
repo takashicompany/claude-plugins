@@ -24,6 +24,26 @@
       "description": "Claude Codeの応答完了時・承認待ち時にPushover経由でプッシュ通知を送る"
     },
     {
+      "name": "playbook",
+      "description": "プロンプト送信時にルールファイルを自動で注入するHookプラグイン",
+      "version": "0.1.0",
+      "author": {
+        "name": "takashicompany"
+      },
+      "source": "./plugins/playbook",
+      "category": "development"
+    },
+    {
+      "name": "booth-review",
+      "description": "回答完了時に根拠チェックを強制するHookプラグイン",
+      "version": "0.1.0",
+      "author": {
+        "name": "takashicompany"
+      },
+      "source": "./plugins/booth-review",
+      "category": "development"
+    },
+    {
       "name": "wakariyasui-game",
       "description": "ゲームのスクリーンショットや動画からAIがゲーム内容を理解できるかを評価し、分かりやすさを採点するプラグイン",
       "version": "0.5.0",
