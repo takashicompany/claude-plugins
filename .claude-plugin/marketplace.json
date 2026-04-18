@@ -72,6 +72,16 @@
       },
       "source": "./plugins/google-play-assets-playwright",
       "category": "development"
+    },
+    {
+      "name": "claude-utils",
+      "description": "Claude Code汎用ユーティリティスキル集（AIコミット・コミット前チェック・ユーザーへの質問）",
+      "version": "0.1.0",
+      "author": {
+        "name": "takashicompany"
+      },
+      "source": "./plugins/claude-utils",
+      "category": "productivity"
     }
   ]
 }

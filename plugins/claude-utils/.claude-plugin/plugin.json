@@ -1,0 +1,7 @@
+{
+  "name": "claude-utils",
+  "description": "Claude Code汎用ユーティリティスキル集（AIコミット・コミット前チェック・ユーザーへの質問）",
+  "author": {
+    "name": "takashicompany"
+  }
+}
