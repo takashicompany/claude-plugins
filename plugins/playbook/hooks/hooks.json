@@ -5,9 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/inject-rules.sh",
-            "timeout": 5,
-            "statusMessage": "ルールを読み込み中..."
+            "command": "cat ~/.claude/playbook/playbook.md \"$CLAUDE_PROJECT_DIR/.claude/playbook/playbook.md\" 2>/dev/null || true"
           }
         ]
       }
