@@ -1,0 +1,7 @@
+{
+  "name": "game-planner",
+  "description": "ゲームの曖昧なアイデアから対話を通じて仕様書(plan.md)を作るスキル。最初の2問で方向性を把握し、参考ゲームを調査した上で、AIが必要な質問を判定しながら仕様書を完成させる。",
+  "author": {
+    "name": "takashicompany"
+  }
+}
