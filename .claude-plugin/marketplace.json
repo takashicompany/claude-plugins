@@ -92,6 +92,26 @@
       },
       "source": "./plugins/game-planner",
       "category": "development"
+    },
+    {
+      "name": "image-gen-codex",
+      "description": "Codex CLIのビルトイン画像生成機能を使ってAI画像（アイコン・バナー・イラスト・プレースホルダー素材等）を生成する汎用スキル",
+      "version": "0.1.0",
+      "author": {
+        "name": "takashicompany"
+      },
+      "source": "./plugins/image-gen-codex",
+      "category": "development"
+    },
+    {
+      "name": "codex-quota",
+      "description": "Codex CLIの残り利用量（5時間枠・週間枠）を取得し、画像生成等の高コスト操作前にクォータを確認するスキル",
+      "version": "0.1.0",
+      "author": {
+        "name": "takashicompany"
+      },
+      "source": "./plugins/codex-quota",
+      "category": "development"
     }
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "name": "codex-quota",
+  "description": "Codex CLIの残り利用量（5時間枠・週間枠）を取得し、画像生成等の高コスト操作前にクォータを確認するスキル",
+  "author": {
+    "name": "takashicompany"
+  }
+}
