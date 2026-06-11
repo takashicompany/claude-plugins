@@ -1,0 +1,7 @@
+{
+  "name": "image-gen-codex",
+  "description": "Codex CLIのビルトイン画像生成機能を使ってAI画像（アイコン・バナー・イラスト・プレースホルダー素材等）を生成する汎用スキル",
+  "author": {
+    "name": "takashicompany"
+  }
+}
