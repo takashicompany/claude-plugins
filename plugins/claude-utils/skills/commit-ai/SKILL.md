@@ -1,7 +1,7 @@
 ---
 name: commit-ai
 description: AIが作業・変更したファイルをgit commitする。ユーザーが「AIの変更をコミットして」などと言った時に使用。
-disable-model-invocation: true
+disable-model-invocation: false
 allowed-tools: "Bash, Read, Grep, Glob"
 ---
 

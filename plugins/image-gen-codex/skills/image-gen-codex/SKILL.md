@@ -1,4 +1,5 @@
 ---
+name: image-gen-codex
 description: ユーザーが「画像を生成して」「アイコンを作って」「バナー/イラスト/プレースホルダー素材を生成して」等、AI画像生成を求めたときに使う汎用スキル。Codex CLIのビルトイン画像生成（gpt-image-2）を使用する。ユーザーが画像生成を明示的に指示・言及していない場合は、実行前に必ずユーザーに許可を求めること。
 allowed-tools: Bash, AskUserQuestion, Read, Write
 ---

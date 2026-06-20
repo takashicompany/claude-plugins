@@ -1,4 +1,5 @@
 ---
+name: codex-quota
 description: Codex CLIの残り利用量（レートリミット/クォータ）を確認する。「Codexの残量は？」「あとどれくらい使える？」「画像生成する前に残量チェックして」等、Codex利用量の確認を求められたときに使う。
 allowed-tools: Bash, Read
 ---

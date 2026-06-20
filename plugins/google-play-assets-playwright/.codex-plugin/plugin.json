@@ -1,0 +1,20 @@
+{
+  "name": "google-play-assets-playwright",
+  "version": "0.1.0",
+  "description": "Playwright MCPを使ってWebブラウザゲームのGoogle Play公開用画像素材をAIが自動生成するスキル",
+  "author": {
+    "name": "takashicompany"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "google-play-assets-playwright",
+    "shortDescription": "WebゲームのGoogle Play素材を生成するスキル",
+    "developerName": "takashicompany",
+    "category": "Development",
+    "longDescription": "Playwright で Web ブラウザゲームを操作し、Google Play 公開用のスクリーンショット、アイコン候補、フィーチャーグラフィック候補を生成するスキルです。",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "WebゲームのGoogle Play素材を生成してください。"
+    ]
+  }
+}

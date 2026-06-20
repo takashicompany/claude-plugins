@@ -1,7 +1,7 @@
 ---
 name: commit-pre-check
 description: コミット前にgit statusを分析し、コミットすべきもの/すべきでないもの/判断が必要なものを分類する。「コミット前チェック」「何をコミットすべき？」などの時に使用。
-disable-model-invocation: true
+disable-model-invocation: false
 allowed-tools: "Bash, Read, Grep, Glob"
 ---
 

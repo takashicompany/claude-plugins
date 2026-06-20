@@ -1,0 +1,20 @@
+{
+  "name": "booth-review",
+  "version": "0.1.0",
+  "description": "回答完了時に根拠チェックを強制するHookプラグイン",
+  "author": {
+    "name": "takashicompany"
+  },
+  "keywords": ["hooks", "grounding", "fact-check", "hallucination"],
+  "interface": {
+    "displayName": "booth-review",
+    "shortDescription": "回答完了時に根拠チェックを強制するHookプラグイン",
+    "developerName": "takashicompany",
+    "category": "Development",
+    "longDescription": "回答完了時に根拠チェックを行い、根拠のない主張を減らすためのレビュー用プラグインです。Codex では prompt hook が実行対象外のため、移植検証用のパッケージとして扱います。",
+    "capabilities": ["Review"],
+    "defaultPrompt": [
+      "回答の根拠チェックをしてください。"
+    ]
+  }
+}

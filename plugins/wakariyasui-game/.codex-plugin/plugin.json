@@ -1,0 +1,20 @@
+{
+  "name": "wakariyasui-game",
+  "version": "0.5.0",
+  "description": "ゲームのスクリーンショットや動画からAIがゲーム内容を理解できるかを評価し、分かりやすさを採点するプラグイン",
+  "author": {
+    "name": "takashicompany"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "wakariyasui-game",
+    "shortDescription": "ゲームの分かりやすさを採点するスキル",
+    "developerName": "takashicompany",
+    "category": "Testing",
+    "longDescription": "ゲームのスクリーンショットや動画だけから AI が内容を理解できるかを確認し、公式仕様と照合して分かりやすさを採点するスキルです。",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "ゲームの分かりやすさを評価してください。"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "google-play-assets-unity",
+  "version": "0.1.0",
+  "description": "Unity MCPを使ってGoogle Play公開用の画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
+  "author": {
+    "name": "takashicompany"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "google-play-assets-unity",
+    "shortDescription": "UnityゲームのGoogle Play素材を生成するスキル",
+    "developerName": "takashicompany",
+    "category": "Development",
+    "longDescription": "Unity Editor を操作できる MCP を使い、Google Play 公開用のスクリーンショット、アイコン候補、フィーチャーグラフィック候補を生成するスキルです。",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "UnityゲームのGoogle Play素材を生成してください。"
+    ]
+  }
+}

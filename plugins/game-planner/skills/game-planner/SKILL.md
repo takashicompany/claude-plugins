@@ -1,4 +1,5 @@
 ---
+name: game-planner
 description: ゲームの曖昧なアイデアから対話を通じて仕様書(plan.md)を作るスキル。「ゲームの企画を考えたい」「アイデアを仕様書にしたい」「ゲームのplan.mdを作って」のような時に使用する。AIがそのアイデアに応じて必要な質問・調査を判定しながら進める。
 allowed-tools: AskUserQuestion, Agent, WebSearch, WebFetch, Read, Write, Bash, Glob, Grep
 ---

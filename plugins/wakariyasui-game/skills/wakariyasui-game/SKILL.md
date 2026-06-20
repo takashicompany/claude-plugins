@@ -1,4 +1,5 @@
 ---
+name: wakariyasui-game
 description: ゲームのスクリーンショットや動画からAIが内容を理解できるかテストし、分かりやすさを採点する。ゲームのUX評価に使う。
 allowed-tools: Agent, Read, Glob, Bash(mkdir:*), Write
 ---

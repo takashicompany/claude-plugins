@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cat ~/.claude/playbook/playbook.md \"$CLAUDE_PROJECT_DIR/.claude/playbook/playbook.md\" 2>/dev/null || true"
+            "command": "PROJECT_DIR=\"${CLAUDE_PROJECT_DIR:-$(pwd)}\"; cat \"$HOME/.claude/playbook/playbook.md\" \"$HOME/.codex/playbook/playbook.md\" \"$PROJECT_DIR/.claude/playbook/playbook.md\" \"$PROJECT_DIR/.codex/playbook/playbook.md\" 2>/dev/null || true"
           }
         ]
       }

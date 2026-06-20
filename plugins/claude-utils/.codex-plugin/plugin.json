@@ -1,0 +1,21 @@
+{
+  "name": "claude-utils",
+  "version": "0.1.0",
+  "description": "Claude Code汎用ユーティリティスキル集（AIコミット・コミット前チェック・ユーザーへの質問）",
+  "author": {
+    "name": "takashicompany"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "claude-utils",
+    "shortDescription": "コミットや質問を支援するユーティリティスキル集",
+    "developerName": "takashicompany",
+    "category": "Productivity",
+    "longDescription": "コミット前チェック、AI が行った変更のコミット、ユーザーへの確認質問を支援する汎用ユーティリティスキル集です。",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "コミット前チェックをしてください。",
+      "AI の変更をコミットしてください。"
+    ]
+  }
+}

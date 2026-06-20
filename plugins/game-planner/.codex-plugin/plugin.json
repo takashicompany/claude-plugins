@@ -1,0 +1,20 @@
+{
+  "name": "game-planner",
+  "version": "0.1.0",
+  "description": "ゲームの曖昧なアイデアから対話を通じて仕様書(plan.md)を作るスキル",
+  "author": {
+    "name": "takashicompany"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "game-planner",
+    "shortDescription": "曖昧なゲーム案から仕様書を作るスキル",
+    "developerName": "takashicompany",
+    "category": "Development",
+    "longDescription": "一言のゲームアイデアから、質問と調査を通じて実装担当が読める仕様書 plan.md を作成するスキルです。",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "ゲームの企画を仕様書にしてください。"
+    ]
+  }
+}

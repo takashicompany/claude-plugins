@@ -1,0 +1,20 @@
+{
+  "name": "image-gen-codex",
+  "version": "0.1.0",
+  "description": "Codex CLIのビルトイン画像生成機能を使ってAI画像を生成する汎用スキル",
+  "author": {
+    "name": "takashicompany"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "image-gen-codex",
+    "shortDescription": "Codex CLIでAI画像を生成するスキル",
+    "developerName": "takashicompany",
+    "category": "Development",
+    "longDescription": "Codex CLI の画像生成機能を使い、アイコン、バナー、イラスト、プレースホルダー素材などを生成するスキルです。",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "画像を生成してください。"
+    ]
+  }
+}

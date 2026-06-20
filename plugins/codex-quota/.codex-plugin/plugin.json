@@ -1,0 +1,20 @@
+{
+  "name": "codex-quota",
+  "version": "0.1.0",
+  "description": "Codex CLIの残り利用量（5時間枠・週間枠）を取得し、画像生成等の高コスト操作前にクォータを確認するスキル",
+  "author": {
+    "name": "takashicompany"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "codex-quota",
+    "shortDescription": "Codex CLIの残り利用量を確認するスキル",
+    "developerName": "takashicompany",
+    "category": "Development",
+    "longDescription": "Codex CLI の app-server またはセッション情報からレートリミット残量を確認し、高コスト操作前の判断材料を返すスキルです。",
+    "capabilities": ["Interactive"],
+    "defaultPrompt": [
+      "Codex の残量を確認してください。"
+    ]
+  }
+}

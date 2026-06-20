@@ -1,0 +1,116 @@
+{
+  "name": "takashicompany",
+  "interface": {
+    "displayName": "takashicompany"
+  },
+  "plugins": [
+    {
+      "name": "playbook",
+      "source": {
+        "source": "local",
+        "path": "./plugins/playbook"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    },
+    {
+      "name": "booth-review",
+      "source": {
+        "source": "local",
+        "path": "./plugins/booth-review"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    },
+    {
+      "name": "wakariyasui-game",
+      "source": {
+        "source": "local",
+        "path": "./plugins/wakariyasui-game"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Testing"
+    },
+    {
+      "name": "google-play-assets-unity",
+      "source": {
+        "source": "local",
+        "path": "./plugins/google-play-assets-unity"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    },
+    {
+      "name": "google-play-assets-playwright",
+      "source": {
+        "source": "local",
+        "path": "./plugins/google-play-assets-playwright"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    },
+    {
+      "name": "claude-utils",
+      "source": {
+        "source": "local",
+        "path": "./plugins/claude-utils"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "game-planner",
+      "source": {
+        "source": "local",
+        "path": "./plugins/game-planner"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    },
+    {
+      "name": "image-gen-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/image-gen-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    },
+    {
+      "name": "codex-quota",
+      "source": {
+        "source": "local",
+        "path": "./plugins/codex-quota"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    }
+  ]
+}

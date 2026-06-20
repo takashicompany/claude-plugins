@@ -1,0 +1,21 @@
+{
+  "name": "playbook",
+  "version": "0.3.0",
+  "description": "プロンプト送信時にルールファイルを自動で注入するHookプラグイン",
+  "author": {
+    "name": "takashicompany"
+  },
+  "keywords": ["hooks", "rules", "prompt-injection", "grounding"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "playbook",
+    "shortDescription": "プロジェクトのルールファイルを読み込むプラグイン",
+    "developerName": "takashicompany",
+    "category": "Development",
+    "longDescription": "グローバルまたはプロジェクトローカルの playbook.md を読み込み、毎ターンのコンテキストにルールを注入するプラグインです。",
+    "capabilities": ["Interactive"],
+    "defaultPrompt": [
+      "このプロジェクトのplaybookを作成してください。"
+    ]
+  }
+}

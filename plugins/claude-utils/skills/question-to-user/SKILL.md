@@ -1,7 +1,7 @@
 ---
 name: question-to-user
 description: AIがユーザーに質問する。確認事項や判断を仰ぎたい時に使用。「質問して」「聞いて」などの時に使用。
-disable-model-invocation: true
+disable-model-invocation: false
 allowed-tools: "AskUserQuestion"
 argument-hint: "[質問内容]"
 ---
