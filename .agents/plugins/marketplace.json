@@ -65,7 +65,7 @@
       "category": "Development"
     },
     {
-      "name": "claude-utils",
+      "name": "codex-utils",
       "source": {
         "source": "local",
         "path": "./plugins/claude-utils"

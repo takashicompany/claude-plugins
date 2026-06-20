@@ -39,7 +39,7 @@ codex plugin marketplace add ./.
 | wakariyasui-game | ゲームのスクリーンショットや動画から分かりやすさを採点するプラグイン |
 | google-play-assets-unity | Unity MCPを使ってGoogle Play公開用画像素材を生成するスキル |
 | google-play-assets-playwright | Playwright MCPを使ってWebゲームのGoogle Play公開用画像素材を生成するスキル |
-| claude-utils | AIコミット・コミット前チェック・ユーザーへの質問などの汎用ユーティリティ |
+| claude-utils / codex-utils | AIコミット・コミット前チェック・ユーザーへの質問などの汎用ユーティリティ |
 | game-planner | 曖昧なゲームアイデアから仕様書 `plan.md` を作るスキル |
 | image-gen-codex | Codex CLIの画像生成機能を使ってAI画像を生成するスキル |
 | codex-quota | Codex CLIの残り利用量を確認するスキル |

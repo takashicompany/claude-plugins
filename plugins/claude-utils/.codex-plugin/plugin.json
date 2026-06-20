@@ -1,13 +1,13 @@
 {
-  "name": "claude-utils",
+  "name": "codex-utils",
   "version": "0.1.0",
-  "description": "Claude Code汎用ユーティリティスキル集（AIコミット・コミット前チェック・ユーザーへの質問）",
+  "description": "Codex向けユーティリティスキル集（AIコミット・コミット前チェック・ユーザーへの質問）",
   "author": {
     "name": "takashicompany"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "claude-utils",
+    "displayName": "codex-utils",
     "shortDescription": "コミットや質問を支援するユーティリティスキル集",
     "developerName": "takashicompany",
     "category": "Productivity",
