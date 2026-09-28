@@ -1,6 +1,6 @@
 {
   "name": "google-play-assets-playwright",
-  "description": "Playwright MCPを使ってWebブラウザゲームのGoogle Play公開用画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
+  "description": "Playwright（CLI・MCP等）を使ってWebブラウザゲームのGoogle Play公開用画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
   "author": {
     "name": "takashicompany"
   }

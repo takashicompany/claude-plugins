@@ -1,6 +1,6 @@
 {
   "name": "google-play-assets-unity",
-  "description": "Unity MCPを使ってGoogle Play公開用の画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
+  "description": "Unity Editorを操作できるツール（Unity MCP・uLoop CLI等）を使ってGoogle Play公開用の画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
   "author": {
     "name": "takashicompany"
   }

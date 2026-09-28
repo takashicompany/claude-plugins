@@ -55,7 +55,7 @@
     },
     {
       "name": "google-play-assets-unity",
-      "description": "Unity MCPを使ってGoogle Play公開用の画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
+      "description": "Unity Editorを操作できるツール（Unity MCP・uLoop CLI等）を使ってGoogle Play公開用の画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
       "version": "0.1.0",
       "author": {
         "name": "takashicompany"
@@ -65,7 +65,7 @@
     },
     {
       "name": "google-play-assets-playwright",
-      "description": "Playwright MCPを使ってWebブラウザゲームのGoogle Play公開用画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
+      "description": "Playwright（CLI・MCP等）を使ってWebブラウザゲームのGoogle Play公開用画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
       "version": "0.1.0",
       "author": {
         "name": "takashicompany"

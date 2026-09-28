@@ -37,8 +37,8 @@ codex plugin marketplace add ./.
 | playbook | プロンプト送信時にルールファイルを自動で注入するHookプラグイン |
 | booth-review | 回答完了時に根拠チェックを強制するHookプラグイン |
 | wakariyasui-game | ゲームのスクリーンショットや動画から分かりやすさを採点するプラグイン |
-| google-play-assets-unity | Unity MCPを使ってGoogle Play公開用画像素材を生成するスキル |
-| google-play-assets-playwright | Playwright MCPを使ってWebゲームのGoogle Play公開用画像素材を生成するスキル |
+| google-play-assets-unity | Unity Editorを操作できるツール（Unity MCP・uLoop CLI等）を使ってGoogle Play公開用画像素材を生成するスキル |
+| google-play-assets-playwright | Playwright（CLI・MCP等）を使ってWebゲームのGoogle Play公開用画像素材を生成するスキル |
 | claude-utils / codex-utils | AIコミット・コミット前チェック・ユーザーへの質問などの汎用ユーティリティ |
 | game-planner | 曖昧なゲームアイデアから仕様書 `plan.md` を作るスキル |
 | image-gen-codex | Codex CLIの画像生成機能を使ってAI画像を生成するスキル |

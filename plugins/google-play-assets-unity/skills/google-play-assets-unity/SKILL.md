@@ -1,6 +1,6 @@
 ---
 name: google-play-assets-unity
-description: Unity MCPを使ってGoogle Play公開用の画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル
+description: Unity Editorを操作できるツール（Unity MCP・uLoop CLI等）を使ってGoogle Play公開用の画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル
 ---
 
 # Google Play Assets Generator
@@ -9,15 +9,16 @@ Google Play公開に必要な画像素材を自動生成するスキルです。
 
 ## 前提条件
 
-- Unity Editorを操作できるMCPサーバーが接続されていること（playmode制御、screenshot撮影、ゲーム操作、GameView解像度設定が可能なもの）
-- MCPが利用できない場合はその旨を伝えて終了すること
+- Unity Editorを操作できる手段があること（playmode制御、screenshot撮影、ゲーム操作、GameView解像度設定が可能なもの）
+  - 例: Unity MCP、uLoop CLI など。種類は問わず、その環境で使えるものを使う
+- 利用できる手段がない場合はその旨を伝えて終了すること
 
 ## 実行手順
 
 ### Step 1: 環境確認
 
-1. MCP経由でUnity Editorの状態を取得し、MCPが利用可能であることを確認する
-2. 利用できない場合は「Unity Editorを操作できるMCPサーバーが必要です」と伝えて終了する
+1. 環境で利用可能なUnity Editor操作手段（MCPサーバー、CLIツール等）を確認し、Unity Editorの状態を取得できることを確かめる
+2. 利用できる手段がない場合は「Unity Editorを操作できるツール（Unity MCP、uLoop CLI等）が必要です」と伝えて終了する
 
 ### Step 2: ゲームの理解
 
@@ -31,7 +32,7 @@ Google Play公開に必要な画像素材を自動生成するスキルです。
 
 ### Step 3: GameView解像度の設定
 
-MCPでGameViewの解像度をストア用スクリーンショットの要件に設定する。
+GameViewの解像度をストア用スクリーンショットの要件に設定する。
 
 - **スマホ縦向き**: 1080 x 1920（9:16）
 - **スマホ横向き**: 1920 x 1080（16:9）
@@ -40,8 +41,8 @@ MCPでGameViewの解像度をストア用スクリーンショットの要件に
 
 ### Step 4: スクリーンショット撮影
 
-1. MCPでPlayモードを開始する
-2. Step 2で理解したゲームの仕組みに基づいて、MCPで利用可能な操作を使ってゲームを操作する
+1. Playモードを開始する
+2. Step 2で理解したゲームの仕組みに基づいて、利用可能な操作を使ってゲームを操作する
    - 様々な画面状態・場面のバリエーションを作り出す
    - ステージ切替が可能なら複数ステージでSSを撮る
 3. バリエーション豊かな場面ごとにスクリーンショットを撮影する
