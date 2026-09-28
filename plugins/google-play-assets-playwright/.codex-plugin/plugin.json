@@ -1,6 +1,6 @@
 {
   "name": "google-play-assets-playwright",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Playwright（CLI・MCP等）を使ってWebブラウザゲームのGoogle Play公開用画像素材をAIが自動生成するスキル",
   "author": {
     "name": "takashicompany"
