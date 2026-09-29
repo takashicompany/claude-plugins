@@ -21,6 +21,7 @@ HTML ゲームのプレイ動画を、**ゲーム画面だけ・ゲームの音�
 assets/html-game-recorder.js   録画ライブラリ (両方の使い方で共通)
 assets/hand-cursor.js          指の画像をポインタに追従させるライブラリ
 assets/hand/hand_{idle,tap}.png 指の画像 (伸ばした指 / 押している指, 512x512)
+assets/tool-cursor.js          ゲーム側のコードが動かす「道具」の画像 (シャワー・ジョウロなど)
 scripts/record.mjs             差し込みで録画する Playwright スクリプト
 references/embed.md            組み込み手順・設定一覧
 references/recording-mode.md   ゲーム側の「撮影モード」の作り方 (組み込み時)
@@ -101,9 +102,31 @@ node <このスキルのパス>/scripts/record.mjs \
 | `--letterbox` | 余白の色 | body の背景色 |
 | `--audio` | `page` / `tab` / `none` | `page` |
 | `--wait-for` | 録画開始前に真になるまで待つ JS 式 | なし |
+| `--inject` | ゲーム別の演出スクリプトを差し込む (複数可) | なし |
+| `--asset` | `name=path` の画像を `window.HTML_GAME_ASSETS[name]` (data URL) として渡す (複数可) | なし |
 
 結果は JSON で表示される (保存先、長さ、解像度、コーデック、フレーム数)。
 その後 `references/verify.md` の手順で**音声・フレームを必ず確認**してから報告する。
+
+### 道具を動かす演出 (任意)
+
+指の代わりに「シャワーが注ぎ口まで飛んでいって水を出す」のような演出をしたい場合は、
+ゲーム別のスクリプトを `--inject` で差し込み、`window.HtmlGameTool` で道具の画像を動かす。
+画像は `--asset` で渡す。指は `--no-hand` で消し、必要なら `HTML_GAME_ASSETS.hand_tap` を使って
+その場に一瞬出す (`flash`)。
+
+```js
+const tool = HtmlGameTool.create({ src: HTML_GAME_ASSETS.shower, anchor: { x: 0.15, y: 0.22 }, width: 300 });
+tool.show();
+await tool.moveTo(clientX, clientY, { ms: 450 });  // 基準点 (anchor) を画面座標へ移動
+await tool.rotateTo(-25, { ms: 150 });             // 基準点まわりに回転
+tool.setEffect({ length: 40, width: 12 });          // 基準点から真下へ伸びる帯 (水流など)。null で消す
+tool.flash(x, y, { ms: 250 });                      // その場に一瞬出して消す
+```
+
+ゲームの処理を道具の到着まで待たせる必要がある場合は、ゲーム側に小さなフック
+(例: 処理開始時に呼ばれる関数と、保留フラグ) を用意し、差し込んだスクリプトから使う。
+どのパターン (指 / 道具) で撮るかは、`--inject` の有無で切り替えられるようにしておく。
 
 ### 5. 報告
 
