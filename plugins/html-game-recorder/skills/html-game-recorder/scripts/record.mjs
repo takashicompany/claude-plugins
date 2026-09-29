@@ -7,7 +7,12 @@
  *   node record.mjs --url http://127.0.0.1:8000/index.html --out ./videos \
  *     [--scenario ./scenario.mjs] [--duration 5] [--size 1080x1920] [--viewport 1080x1920] \
  *     [--target '#game'] [--hide '#debug,#fps'] [--no-hand] [--letterbox '#000'] \
- *     [--prefix mygame] [--wait-for 'window.game && window.game.ready'] [--audio page|tab|none] [--headed]
+ *     [--prefix mygame] [--wait-for 'window.game && window.game.ready'] [--audio page|tab|none] [--headed] \
+ *     [--inject ./adapter.js ...] [--asset name=./image.png ...]
+ *
+ * --inject: ゲーム別の演出スクリプト (例: シャワーを動かす) をページに差し込む。複数指定可。
+ *           差し込むスクリプトからは window.HtmlGameTool (tool-cursor.js) と
+ *           window.HTML_GAME_ASSETS (同梱の hand_idle/hand_tap と --asset の画像の data URL) が使える。
  *
  * --scenario には次の形のモジュールを渡す (省略時は --duration 秒だけ録る):
  *
@@ -33,7 +38,7 @@ const ASSETS = path.join(HERE, '..', 'assets');
 
 // ---------------- 引数 ----------------
 function parseArgs(argv) {
-  const a = { hand: true, duration: 5, size: '1080x1920', headed: false };
+  const a = { hand: true, duration: 5, size: '1080x1920', headed: false, inject: [], assets: [] };
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i], v = argv[i + 1];
     switch (k) {
@@ -50,6 +55,8 @@ function parseArgs(argv) {
       case '--wait-for': a.waitFor = v; i++; break;
       case '--hand-size': a.handSize = Number(v); i++; break;
       case '--audio': a.audio = v; i++; break;
+      case '--inject': a.inject.push(v); i++; break;
+      case '--asset': a.assets.push(v); i++; break;
       case '--no-hand': a.hand = false; break;
       case '--headed': a.headed = true; break;
       case '-h': case '--help': a.help = true; break;
@@ -80,7 +87,18 @@ async function loadPlaywright() {
 const { chromium } = await loadPlaywright();
 
 // ---------------- 差し込むスクリプト ----------------
-const dataUrl = f => 'data:image/png;base64,' + fs.readFileSync(path.join(ASSETS, 'hand', f)).toString('base64');
+const toDataUrl = file => {
+  const ext = path.extname(file).slice(1).toLowerCase();
+  const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'webp' ? 'image/webp' : ext === 'svg' ? 'image/svg+xml' : 'image/png';
+  return `data:${mime};base64,` + fs.readFileSync(file).toString('base64');
+};
+const dataUrl = f => toDataUrl(path.join(ASSETS, 'hand', f));
+const assets = { hand_idle: dataUrl('hand_idle.png'), hand_tap: dataUrl('hand_tap.png') };
+for (const spec of args.assets) {
+  const eq = spec.indexOf('=');
+  if (eq < 1) throw new Error('--asset は name=path の形で指定してください: ' + spec);
+  assets[spec.slice(0, eq)] = toDataUrl(path.resolve(spec.slice(eq + 1)));
+}
 const recorderCfg = {
   enabled: true, ui: false, hotkey: null,
   // ヘッドレスではタブ音声が無音になるため、ページ内の音を直接集める
@@ -106,6 +124,9 @@ if (args.hand) {
   initScripts.push(topOnly(`window.HTML_GAME_HAND_CONFIG = ${JSON.stringify(handCfg)};`));
   initScripts.push(topOnly(fs.readFileSync(path.join(ASSETS, 'hand-cursor.js'), 'utf8')));
 }
+initScripts.push(topOnly(`window.HTML_GAME_ASSETS = ${JSON.stringify(assets)};`));
+initScripts.push(topOnly(fs.readFileSync(path.join(ASSETS, 'tool-cursor.js'), 'utf8')));
+for (const f of args.inject) initScripts.push(topOnly(fs.readFileSync(path.resolve(f), 'utf8')));
 
 // ---------------- 起動 ----------------
 const browser = await chromium.launch({
