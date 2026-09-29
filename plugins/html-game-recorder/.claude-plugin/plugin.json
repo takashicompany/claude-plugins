@@ -1,0 +1,7 @@
+{
+  "name": "html-game-recorder",
+  "description": "HTMLブラウザゲームのプレイ動画を、ゲーム画面だけ・音声込みで縦動画MP4に録画するスキル。AIがPlaywrightでヘッドレスに撮る差し込み方式と、ゲームに組み込んで人が遊びながら撮る方式に対応",
+  "author": {
+    "name": "takashicompany"
+  }
+}
