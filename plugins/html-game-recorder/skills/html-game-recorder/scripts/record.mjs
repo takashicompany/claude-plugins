@@ -132,8 +132,9 @@ for (const f of args.inject) initScripts.push(topOnly(fs.readFileSync(path.resol
 const browser = await chromium.launch({
   headless: !args.headed,
   channel: process.env.HGREC_CHANNEL || undefined,
-  // Playwright は既定で --mute-audio を付ける。付いたままだとタブ音声が無音になる
-  ignoreDefaultArgs: ['--mute-audio'],
+  // Playwright 既定の --mute-audio は、タブ音声 (--audio tab) のときだけ外す。
+  // page / none では付けたままにして、録画中にスピーカーから音が出ないようにする
+  ...(recorderCfg.audio === 'tab' ? { ignoreDefaultArgs: ['--mute-audio'] } : {}),
   args: [
     '--use-fake-ui-for-media-stream',      // 共有ピッカーを自動承認 (必須)
     '--auto-accept-this-tab-capture',      // preferCurrentTab を無確認で許可
@@ -143,6 +144,7 @@ const browser = await chromium.launch({
     ...(process.platform === 'darwin' ? ['--use-angle=metal'] : [])
   ]
 });
+if (process.env.HGREC_DEBUG) console.error('[hgrec] audio=' + recorderCfg.audio + ' defaultMuteRemoved=' + (recorderCfg.audio === 'tab') + ' ' + (browser.browserType().name()));
 const context = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1, acceptDownloads: true });
 const page = await context.newPage();
 page.on('pageerror', e => console.error('[pageerror]', e.message));
