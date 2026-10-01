@@ -142,6 +142,8 @@ tool.flash(x, y, { ms: 250 });                      // その場に一瞬出し�
 - **ヘッドレスではタブ音声が無音になる** (Playwright 既定の `--mute-audio` を外しても、新しいヘッドレスでも無音)。
   そのため差し込みでは `audio: 'page'` を使う。ページ内の Web Audio と `<audio>/<video>` の出力を直接集める方式で、
   ゲームが `AudioContext` を作る前にフックする必要がある (差し込みは addInitScript なので最初から満たす)
+- **`page` / `none` では Chromium を `--mute-audio` のまま起動する**ので、録画中にスピーカーから音は出ない
+  (録画される MP4 には音が入る。実測 max_volume -4 dB)。`--audio tab` だけは `--mute-audio` を外すため実際に音が鳴る
 - **GPU フラグが無いとヘッドレスの 1080x1920 録画が破綻する** (数フレームで止まる)。record.mjs は macOS で
   `--use-angle=metal` などを付ける。Linux などで破綻したら `--size 720x1280` に下げる
 - 重い場面が長く続くとフレームレートが 30fps を下回ることがある (実測で 60 秒の重い面が平均 24fps)。
