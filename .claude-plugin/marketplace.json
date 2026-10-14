@@ -122,6 +122,16 @@
       },
       "source": "./plugins/html-game-recorder",
       "category": "development"
+    },
+    {
+      "name": "store-listing-writer",
+      "description": "ゲームのGoogle Playストア掲載文（一行説明・説明文）を、決まった書き方（目的→操作→ルール→ボタン→締めの一問）で英語で書くスキル",
+      "version": "0.1.0",
+      "author": {
+        "name": "takashicompany"
+      },
+      "source": "./plugins/store-listing-writer",
+      "category": "productivity"
     }
   ]
 }

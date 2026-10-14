@@ -1,0 +1,8 @@
+{
+  "name": "store-listing-writer",
+  "version": "0.1.0",
+  "description": "ゲームのGoogle Playストア掲載文（一行説明・説明文）を、決まった書き方（目的→操作→ルール→ボタン→締めの一問）で英語で書くスキル",
+  "author": {
+    "name": "takashicompany"
+  }
+}
