@@ -44,3 +44,4 @@ codex plugin marketplace add ./.
 | image-gen-codex | Codex CLIの画像生成機能を使ってAI画像を生成するスキル |
 | codex-quota | Codex CLIの残り利用量を確認するスキル |
 | html-game-recorder | HTMLゲームのプレイ動画を音声込みの縦動画MP4に録画するスキル（AIがヘッドレスで撮る／ゲームに組み込んで人が撮る。Claude Code のみ） |
+| store-listing-writer | ゲームのGoogle Playストア掲載文（一行説明・説明文）を決まった書き方で英語で書くスキル |
