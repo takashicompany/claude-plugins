@@ -44,16 +44,6 @@
       "category": "development"
     },
     {
-      "name": "wakariyasui-game",
-      "description": "ゲームのスクリーンショットや動画からAIがゲーム内容を理解できるかを評価し、分かりやすさを採点するプラグイン",
-      "version": "0.5.0",
-      "author": {
-        "name": "takashicompany"
-      },
-      "source": "./plugins/wakariyasui-game",
-      "category": "testing"
-    },
-    {
       "name": "google-play-assets-unity",
       "description": "Unity Editorを操作できるツール（Unity MCP・uLoop CLI等）を使ってGoogle Play公開用の画像素材（スクリーンショット・アイコン・フィーチャーグラフィック）をAIが自動生成するスキル",
       "version": "0.1.1",
