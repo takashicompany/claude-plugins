@@ -1,0 +1,6 @@
+{
+  "name": "html-report",
+  "version": "0.1.0",
+  "description": "作業経過・調査・一覧などをHTMLにまとめるときの入れ物の作り方(サーバー無し・版の積み方・並べ方・Finderで表示)",
+  "author": { "name": "takashicompany" }
+}
