@@ -122,6 +122,16 @@
       },
       "source": "./plugins/store-listing-writer",
       "category": "productivity"
+    },
+    {
+      "name": "html-report",
+      "description": "作業経過・調査・一覧などをHTMLにまとめるときの入れ物の作り方(サーバー無し・版の積み方・並べ方・Finderで表示)",
+      "version": "0.1.0",
+      "author": {
+        "name": "takashicompany"
+      },
+      "source": "./plugins/html-report",
+      "category": "productivity"
     }
   ]
 }

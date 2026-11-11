@@ -1,0 +1,16 @@
+{
+  "name": "html-report",
+  "version": "0.1.0",
+  "description": "作業経過・調査・一覧などをHTMLにまとめるときの入れ物の作り方(サーバー無し・版の積み方・並べ方・Finderで表示)",
+  "author": { "name": "takashicompany" },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "html-report",
+    "shortDescription": "HTMLまとめページの入れ物の作り方",
+    "developerName": "takashicompany",
+    "category": "Productivity",
+    "longDescription": "作業経過・調査・案・動画や画像の一覧を HTML にまとめるときの、置き場所・開き方・版の積み方・並べ方・確認の決まりと、ローカルのファイルを Finder で表示するボタンを提供します。",
+    "capabilities": ["Interactive"],
+    "defaultPrompt": ["この作業の経過を HTML にまとめてください。"]
+  }
+}
