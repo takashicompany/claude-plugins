@@ -91,15 +91,36 @@ cp <スキルのパス>/assets/hand/hand_idle.png <スキルのパス>/assets/ha
 | `idleSrc` / `tapSrc` | 画像のパス | `assets/hand/hand_{idle,tap}.png` |
 | `sizeRatio` | 指の大きさ = 表示範囲の高さ × この値 | 0.126 |
 | `minTapMs` | 押した絵を最低これだけ出す (ms) | 120 |
-| `idleTip` / `tapTip` | 画像内の指先位置 (比率)。画像を差し替えたら測り直す | 同梱画像の実測値 |
+| `tapTip` | 押した絵の指先位置 (比率)。ここがポインタ座標に来る | 同梱画像の実測値 |
+| `idleWrist` / `tapWrist` | 各絵の手首 (袖口の中心) の位置 (比率)。2枚の絵はここを同じ画面位置に合わせる | 同梱画像の実測値 |
+| `idleTip` | 伸ばした絵の指先位置 (比率)。位置合わせには使わない (参考値) | 同梱画像の実測値 |
 | `hideOsCursor` | 範囲内で OS のマウスカーソルを隠す | true |
 
 指の画像は `position: fixed` で置く。録画する要素やその祖先に `transform` があると位置がずれるので、
 その場合は `transform` の無い要素を `root` にする。
 
-## 画像を差し替えたときの指先位置の測り方
+## 指の絵の位置合わせ
 
-指先方向の最遠点の近くにある不透明画素の重心を指先とする。
+絵を切り替えても (idle ⇄ tap) **手首は動かさず、指先だけが動く**ようにする。2枚の絵は指先ではなく手首で合わせる。
+押した絵 (tap) の指先がポインタ座標に来るように手首の位置を決め、伸ばした絵 (idle) も同じ手首位置に描く。
+
+| 基準点 (512x512 中の px) | idle | tap |
+|---|---|---|
+| 手首 (袖口の中心) | (414.8, 387.8) | (415.4, 369.5) |
+| 指先 | (75.1, 51.9) | (68.5, 115.6) |
+
+canvas に自前で描く場合も同じ規則にする (`size` は表示サイズ、`(px, py)` はタップ座標、各値は比率):
+
+```js
+const wx = px + (tapWrist.x - tapTip.x) * size, wy = py + (tapWrist.y - tapTip.y) * size; // 手首の画面位置
+const w = pressed ? tapWrist : idleWrist;
+ctx.drawImage(pressed ? tapImg : idleImg, wx - w.x * size, wy - w.y * size, size, size);
+```
+
+## 画像を差し替えたときの基準点の測り方
+
+指先: 指先方向の最遠点の近くにある不透明画素の重心。
+手首: 袖口のあたり (同梱画像では x > 330, y > 280) にある濃い輪郭線の画素の重心。
 
 ```python
 from PIL import Image
@@ -115,4 +136,11 @@ def tip(path, dirx, diry, thresh=60, radius=22):
     print(path, {'x': round(cx / w, 4), 'y': round(cy / h, 4)})
 tip('hand_idle.png', -1, -1)          # 同梱画像: 指が左上を向いている
 tip('hand_tap.png', -0.905, -0.426)   # 同梱画像: 指が左やや上を向いている
+
+def wrist(path, x0=330, y0=280, dark=200):
+    im = Image.open(path).convert('RGBA'); w, h = im.size; p = im.load()
+    pts = [(x, y) for y in range(y0, h) for x in range(x0, w) if p[x, y][3] > 128 and sum(p[x, y][:3]) < dark]
+    cx = sum(q[0] for q in pts) / len(pts); cy = sum(q[1] for q in pts) / len(pts)
+    print(path, {'x': round(cx / w, 4), 'y': round(cy / h, 4)})
+wrist('hand_idle.png'); wrist('hand_tap.png')
 ```

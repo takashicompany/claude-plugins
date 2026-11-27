@@ -7,8 +7,10 @@
  * それ以外では何もしない。
  *
  * マウス操作でも「指で操作している」ように見えるよう、指の画像をポインタに追従させる。
- *   - 人差し指の指先がポインタ座標に一致する
+ *   - 押した絵 (tap) の指先がポインタ座標に一致する (= ポインタは「押したときに指先が触れる点」)
  *   - 押下中は指を曲げた画像に切り替わる (素早いタップでも minTapMs は表示し続ける)
+ *   - 絵を切り替えても手首 (袖口の中心) は動かさず、指先だけが動く。
+ *     2枚の絵は指先ではなく手首で位置を合わせる (指先で合わせると切り替えのたびに手全体が跳ねる)
  *   - pointer-events:none なのでゲーム操作を邪魔しない
  *   - area の外にポインタが出たら隠す
  *
@@ -41,10 +43,14 @@
   var Z_INDEX = CFG.zIndex || 2147482000;
   var MIN_TAP_MS = CFG.minTapMs === undefined ? 120 : CFG.minTapMs;
   var HIDE_OS_CURSOR = CFG.hideOsCursor !== false;
-  // 画像内の指先位置 (画像サイズに対する比率)。同梱の hand_idle.png / hand_tap.png の実測値。
-  // 画像を差し替えたら references/hand-images.md の手順で測り直すこと
+  // 画像内の基準点 (画像サイズに対する比率)。同梱の hand_idle.png / hand_tap.png の実測値。
+  // 画像を差し替えたら references/embed.md の手順で測り直すこと
+  //   *Tip   = 指先。ポインタ座標に合わせるのは tapTip だけ (idleTip は参考値)
+  //   *Wrist = 手首 (袖口の中心)。2枚の絵はこの点が同じ画面位置に来るように置く
   var IDLE_TIP = CFG.idleTip || { x: 75.1 / 512, y: 51.9 / 512 };
   var TAP_TIP = CFG.tapTip || { x: 68.5 / 512, y: 115.6 / 512 };
+  var IDLE_WRIST = CFG.idleWrist || { x: 414.8 / 512, y: 387.8 / 512 };
+  var TAP_WRIST = CFG.tapWrist || { x: 415.4 / 512, y: 369.5 / 512 };
 
   var root = null, area = null, wrap = null, idleImg = null, tapImg = null, sizePx = 0;
 
@@ -77,12 +83,15 @@
 
   function layout() {
     sizePx = areaRect().height * SIZE_RATIO;
-    [[idleImg, IDLE_TIP], [tapImg, TAP_TIP]].forEach(function (pair) {
-      var img = pair[0], tip = pair[1];
+    // 手首の位置 (ラッパー原点 = ポインタ座標 からの相対)。押した絵の指先がポインタに来る位置に置く
+    var wristX = (TAP_WRIST.x - TAP_TIP.x) * sizePx;
+    var wristY = (TAP_WRIST.y - TAP_TIP.y) * sizePx;
+    [[idleImg, IDLE_WRIST], [tapImg, TAP_WRIST]].forEach(function (pair) {
+      var img = pair[0], wrist = pair[1];
       img.style.width = sizePx + 'px';
       img.style.height = sizePx + 'px';
-      // ラッパーの原点 (= ポインタ座標) に指先が来るようにずらす
-      img.style.transform = 'translate(' + (-tip.x * sizePx) + 'px,' + (-tip.y * sizePx) + 'px)';
+      // どちらの絵も手首を同じ位置に合わせる (指先では合わせない)
+      img.style.transform = 'translate(' + (wristX - wrist.x * sizePx) + 'px,' + (wristY - wrist.y * sizePx) + 'px)';
     });
   }
 
@@ -150,6 +159,12 @@
         visible: wrap.classList.contains('show'),
         down: wrap.classList.contains('down'),
         left: wrap.style.left, top: wrap.style.top, sizePx: sizePx,
+        // ポインタ座標から見た手首 / 伸ばした指先の位置 (px)。押した絵の指先は常に (0, 0)
+        wristOffset: { x: (TAP_WRIST.x - TAP_TIP.x) * sizePx, y: (TAP_WRIST.y - TAP_TIP.y) * sizePx },
+        idleTipOffset: {
+          x: (TAP_WRIST.x - TAP_TIP.x + IDLE_TIP.x - IDLE_WRIST.x) * sizePx,
+          y: (TAP_WRIST.y - TAP_TIP.y + IDLE_TIP.y - IDLE_WRIST.y) * sizePx
+        },
         root: root && (root.id ? '#' + root.id : root.tagName.toLowerCase())
       };
     },
